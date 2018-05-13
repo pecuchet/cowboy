@@ -10,6 +10,10 @@ from cowboy import helpers
 
 
 def start_display():
+    """
+    Launch command-line tool fbi to display images
+    :return:
+    """
     logger.debug('Launching display')
     os.system("sudo killall -9 fbi")
     os.system("sudo fbi -a -t 5 --noverbose -l " + helpers.images_dir() + 'list.txt')
@@ -19,14 +23,6 @@ def start_display():
 def fetch(img):
     """
     Returns web annotations given the path to an image
-    return {
-        'visually_similar_images': [
-            'http://dotburo.test/storage/content/timelab-thoreau/media/timelab-thoreau-1.jpg',
-            'http://dotburo.test/storage/content/timelab-thoreau/media/timelab-thoreau-2.jpg',
-            'http://dotburo.test/storage/content/timelab-thoreau/media/timelab-thoreau-4.jpg',
-            'http://dotburo.test/storage/content/timelab-thoreau/media/timelab-thoreau-3.jpg'
-        ]
-    }
     :param img:
     :return:
     """
