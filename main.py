@@ -15,6 +15,10 @@ def main(image):
     if not helpers.setup(image):
         exit(1)
 
+    if not helpers.expired():
+        lib.start_display()
+        return
+
     response = lib.fetch(image)
 
     if not lib.save(response.visually_similar_images):

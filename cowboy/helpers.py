@@ -2,6 +2,8 @@ import os
 import imghdr
 import argparse
 import config
+import os.path
+import time
 
 from logzero import logger
 from pathlib import Path
@@ -32,6 +34,20 @@ def setup(image):
     logger.debug('Program setup done')
 
     return 1
+
+
+def expired():
+    """
+    Check if we need to download a new series of images
+    :return:
+    """
+    img_list = images_dir() + "list.txt"
+    m_time = os.path.getmtime(img_list)
+    now = time.time()
+
+    logger.debug("Images last download time: %s" % time.ctime(m_time))
+
+    return m_time >= now + 86400
 
 
 def app_dir():

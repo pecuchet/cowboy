@@ -11,8 +11,8 @@ from cowboy import helpers
 
 def start_display():
     logger.debug('Launching display')
-    # os.system("sudo killall -9 fbi")
-    # os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a happy.png")
+    os.system("sudo killall -9 fbi")
+    os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a happy.png")
     return
 
 
