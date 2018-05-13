@@ -13,3 +13,6 @@ NUM_RESULTS = 30
 
 # minimum amount of images which should have been retrieved to launch display
 MIN_SAVED = 25
+
+# slide show delay, seconds to display image
+IMG_DELAY = 5

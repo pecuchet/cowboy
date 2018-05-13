@@ -16,7 +16,7 @@ def start_display():
     """
     logger.debug('Launching display')
     os.system("sudo killall -9 fbi")
-    os.system("sudo fbi -a -t 5 --noverbose -l " + helpers.images_dir() + 'list.txt')
+    os.system("sudo fbi -a -t " + config.IMG_DELAY + " --noverbose -l " + helpers.images_dir() + 'list.txt')
     return
 
 
