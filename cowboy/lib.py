@@ -12,7 +12,7 @@ from cowboy import helpers
 def start_display():
     logger.debug('Launching display')
     os.system("sudo killall -9 fbi")
-    os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a happy.png")
+    os.system("sudo fbi -t 5 -T 2 -d /dev/fb1 -l " + helpers.images_dir() + 'list.txt')
     return
 
 
